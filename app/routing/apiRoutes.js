@@ -1,9 +1,9 @@
-var userdata = require("../app/data/friends");
+var userdata = require("../app/data/friends.js");
 
-module.exports = function(app){  //added app parameter
+module.exports = function(app){  
 
 app.get("/api/friends", function (req, res) {
-    res.json(userdata);  //enter parameter This has to connect to the variable object
+    res.json(userdata);  
 });
 
 
