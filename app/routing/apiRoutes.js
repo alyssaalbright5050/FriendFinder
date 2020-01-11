@@ -31,12 +31,12 @@ module.exports = function(app){
 			//loop through that friends score and the users score and calculate the 
 			// absolute difference between the two and push that to the total difference variable set above
 			for(var j = 0; j < 10; j++){
-				// We calculate the difference between the scores and sum them into the totalDifference
+				
 				totalDifference += Math.abs(parseInt(usrScores[j]) - parseInt(friends[i].scores[j]));
-				// If the sum of differences is less then the differences of the current "best match"
+				
 				if (totalDifference <= greatMatch.friendDifference){
 
-					// Reset the bestMatch to be the new friend. 
+					
 					greatMatch.name = friends[i].name;
 					greatMatch.photo = friends[i].photo;
 					greatMatch.matchDifference = totalDifference;
