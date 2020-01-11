@@ -1,4 +1,4 @@
-var friendsArray = [
+var users = [
     {
             name: Tom,
             photo: data/images/Tom_Cruise.jpg,
@@ -69,61 +69,8 @@ var friendsArray = [
         
 ];
 
-function friendConstructor(name, picture, survey) {
-    //Holds json info
-    this.friendObj = {
-        "name": name,
-        "photo": picture,
-        "scores": survey
-    }
-
-    //pushes to friends array
-    this.newFriend = function () {
-        friends.push(this.friendObj);
-        this.findMatch();
-    }
-
-    //will hold match
-    this.closestMatch;
-
-    //used for api get function to display all friends
-    this.showFriends = function () {
-        return friends;
-    }
-
-    //loops and finds match
-    this.findMatch = function () {
-        var currentBestMatch;
-        var currentBestMatchScore = -1;
-
-        for (var i in friends) {
-            //dont match yourself
-            if (friends[i] != this.friendObj) {
-                var newFriendBestMatch = calcFriendDifference(friends[i].scores, this.friendObj.scores);
-
-                if (currentBestMatchScore >= 0) {
-                    if (newFriendBestMatch < currentBestMatchScore) {
-                        currentBestMatch = friends[i];
-                        currentBestMatchScore = newFriendBestMatch;
-                    }
-                }
-                //drops first person in array to have baseline to compare
-                else {
-                    currentBestMatch = friends[i];
-                    currentBestMatchScore = newFriendBestMatch;
-                }
-            }
-        }
-        this.closestMatch = currentBestMatch;
-    }
+var pushUser = function (x){
+    users.push(x);
 }
 
-module.exports = friendConstructor;
-
-calcFriendDifference = function (arr1, arr2) {
-    totalDifference = 0;
-    for (var i in arr1) {
-        totalDifference += Math.abs(arr1[i] - arr2[i]);
-    }
-    return totalDifference;
-}
+module.exports = {users:users, pushUser:pushUser};
