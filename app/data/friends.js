@@ -69,8 +69,5 @@ var users = [
         
 ];
 
-var pushUser = function (x){
-    users.push(x);
-}
 
-module.exports = {users:users, pushUser:pushUser};
+module.exports = users;
