@@ -231,76 +231,70 @@
         <br>
 
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" tabindex="13"><i class="fa fa-check-circle" aria-hidden="true"></i>
- Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-target="#myModal">Submit</button>
+
     </div>
-    <hr>
+</div>
+</div>
+<br>
+<footer class="footer">
+<div class="container">
+    <p>
+        <a href="/api/friends">API Friends List</a> |
+        <a href="/api/waitlist">GitHub Repo</a>
+    </p>
+</div>
 
-    <script type="text/javascript">
-        var config = {
-            '.chosen-select': {},
-            '.chosen-select-deselect': { allow_single_deselect: true },
-            '.chosen-select-no-single': { disable_search_threshold: 10 },
-            '.chosen-select-no-results': { no_results_text: 'Oops, nothing found!' },
-            '.chosen-select-width': { width: "95%" }
-        }
-        for (var selector in config) {
-            $(selector).chosen(config[selector]);
-        }
+<!-- Trigger the modal with a button
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
 
-        var newFriend = {
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
-        }
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Congrats!</h4>
+            </div>
+            <div class="modal-body">
+                <h3 id='modalName'>You matched with </h3>
+                <img id="modalPhoto">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
 
-        $("#submit").on("click", function () {
+    </div>
+</div>
 
-            function validateForm() {
-                var isValid = true;
-                $('.form-control').each(function () {
-                    if ($(this).val() === '')
-                        isValid = false;
-                });
+<script>
+    $("#submit").on("click", function () {
 
-                $('.chosen-select-no-single').each(function () {
+        var userData = {
+            name: $("#Name").val(),
+            photo: $("#Photo").val(),
+            scores: [($("#q1").val()), $("#q2").val(), $("#q3").val(),]
+        };
+        console.log(userData);
 
-                    if ($(this).val() === "")
-                        isValid = false
-                })
-                return isValid;
-            }
-            if (validateForm() == true) {
-                var surveyResults = [];
 
-                for (var i = 1; i < 11; i++) {
-                    surveyResults.push($("#q" + i).val());
-                }
 
-                var newFriend = {
-                    "name": $("#name").val().trim(),
-                    "picture": $("#photo").val().trim(),
-                    "survey": surveyResults
-                }
-                console.log(newFriend);
+        $.post("/survey", userData,
+            function (data) {
+                console.log(data);
+                console.log(data.name);
+                $("#modalName").append(data.name);
+                $("#modalPhoto").attr('src', data.photo);
+                console.log(data.photo);
+            });
+    });
 
-                $.post("/api/friends", newFriend, function (data) {
-                    if (data) {
-                        console.log("matched with:", data);
-                        $("#friendName").text(data.name);
-                        $('#friendImg').attr("src", data.photo);
-                        $("#modal").modal('toggle');
-                    }
 
-                    else {
-                        //fail
-                    }
+</script>
 
-                });
-            }
-            else {
-                alert("Please fill out all fields before submitting!");
-            }
-        });
-    </script>
 </body>
 
 </html>
