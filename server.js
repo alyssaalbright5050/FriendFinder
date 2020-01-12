@@ -4,7 +4,7 @@ var path = require('path');
 
 
 var app = express(); 
-var PORT = process.env.PORT || 3000; 
+var PORT = process.env.PORT || 8080; 
 
 
 app.use(bodyParser.json());
@@ -13,8 +13,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 
-require('./routing/apiRoutes.js')(app); 
-require('./routing/htmlRoutes.js')(app);
+//require('./routing/apiRoutes.js')(app); 
+//require('./routing/htmlRoutes.js')(app);
 
 
 app.listen(PORT, function() {
