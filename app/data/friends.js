@@ -1,7 +1,7 @@
 var users = [
     {
             name: "Tom",
-            photo: "data/images/Tom_Cruise.jpg",
+            photo: "app/data/images/Tom_Cruise.jpg",
             scores: [
                 5,
                 5,
@@ -12,7 +12,7 @@ var users = [
     },
     {
             name: "Angelina",
-            photo: "data/images/Angelina.jpg",
+            photo: "app/data/images/Angelina.jpg",
             scores: [
                 4,
                 1,
@@ -23,7 +23,7 @@ var users = [
     },
     {
             name: "EddieM",
-            photo: "data/images/EddieMurphy.jpg",
+            photo: "app/data/images/EddieMurphy.jpg",
             scores: [
                 3,
                 3,
@@ -34,7 +34,7 @@ var users = [
     },
     {
             name: "Kirsten",
-            photo: "data/images/Kirsten.jpg",
+            photo: "app/data/images/Kirsten.jpg",
             scores: [
                 5,
                 4,
@@ -45,7 +45,7 @@ var users = [
     },
     {
             name: "Krieg",
-            photo: "data/images/Krieg.jpg",
+            photo: "app/data/images/Krieg.jpg",
             scores: [
                 5,
                 4,
@@ -57,7 +57,7 @@ var users = [
     },
     {
             name: "Nicole",
-            photo: "data/images/NicoleKidman.jpg",
+            photo: "app/data/images/NicoleKidman.jpg",
             scores: [
                 5,
                 2,
