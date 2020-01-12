@@ -1,7 +1,7 @@
 var users = [
     {
             name: "Tom",
-            photo: href="app/data/images/Tom_Cruise.jpg",
+            photo: <img src="app/data/images/Tom_Cruise.jpg"></img>,
             scores: [
                 5,
                 5,
