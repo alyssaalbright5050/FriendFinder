@@ -177,7 +177,7 @@
 		//Form validation
 		var valid = true;
 
-		if($("#name").val() === "" || $("#photo").val() === "") {
+		if($("#name").val() === "") {
 			valid = false;
 		} else if($("#question1").val() === "empty" || $("#question2").val() === "empty" || $("#question3").val() === "empty" || $("#question4").val() === "empty" || $("#question5").val() === "empty" || $("#question6").val() === "empty" || $("#question7").val() === "empty" || $("#question8").val() === "empty" || $("#question9").val() === "empty" || $("#question10").val() === "empty") {
 			valid = false;
@@ -186,7 +186,7 @@
 		if(valid === true) {
 			var newUser = {
 				name: $("#name").val().trim(),
-				photo: $("#photo").val().trim(),
+				//photo: $("#photo").val().trim(),
 				scores: [
 					$("#question1").val(),
 					$("#question2").val(),
