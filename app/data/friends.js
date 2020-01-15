@@ -1,7 +1,7 @@
 var users = [
     {
             name: "Tom",
-            photo: <img src="app/data/images/Tom_Cruise.jpg" alt='Tom Cruise'>Tom</img>,
+            photo: src="app/data/images/Tom_Cruise.jpg",
             scores: [
                 5,
                 5,
@@ -12,7 +12,7 @@ var users = [
     },
     {
             name: "Angelina",
-            photo: <img src="app/data/images/Angelina.jpg" alt='Angelina'>Angelina</img>,
+            photo: src = "app/data/images/Angelina.jpg",
             scores: [
                 4,
                 1,
@@ -23,7 +23,7 @@ var users = [
     },
     {
             name: "EddieM",
-            photo: <img src="app/data/images/EddieMurphy.jpg" alt='Eddie'>Eddie</img>,
+            photo: src="app/data/images/EddieMurphy.jpg",
             scores: [
                 3,
                 3,
@@ -34,7 +34,7 @@ var users = [
     },
     {
             name: "Kirsten",
-            photo: <img src="app/data/images/Kirsten.jpg" alt='Kirsten'>Kirsten</img>,
+            photo: src="app/data/images/Kirsten.jpg",
             scores: [
                 5,
                 4,
@@ -45,7 +45,7 @@ var users = [
     },
     {
             name: "Krieg",
-            photo: <img src="app/data/images/Krieg.jpg" alt='Krieg'>Krieg</img>,
+            photo: src='app/data/images/Krieg.jpg',
             scores: [
                 5,
                 4,
@@ -57,7 +57,7 @@ var users = [
     },
     {
             name: "Nicole",
-            photo: <img src="app/data/images/NicoleKidman.jpg" alt='Nicole'>Nicole</img>,
+            photo: src="app/data/images/NicoleKidman.jpg",
             scores: [
                 5,
                 2,
